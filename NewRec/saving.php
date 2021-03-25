@@ -25,7 +25,7 @@
 
   <div class="amount-formField">
     <label for="amount">Kolik </label>
-    <input type="number" name="amount" min="0" max="50000" step="500" value="2000" />
+    <input type="number" name="amount" min="-50000" max="50000" step="500" value="2000" />
   </div>
 
   <br>

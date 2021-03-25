@@ -8,8 +8,9 @@ if ( ! empty( $_POST['MainFormButton'] ) ) { /* print_r($_POST); exit */
     extract( $data);
 
     //submit
-    $query = "INSERT INTO allcash (cash_Value, cash_Date, cash_Descr, type_Id, usr_Id) VALUES ('$amount','$date', '$descr', '$type', '$userName')";
-   /*   var_dump($query);*/
+    $query = "INSERT INTO allcash2 (cash_Value, cash_Date, cash_Cat, cash_Desc, type_Id, usr_Id) VALUES ('$amount','$date','$cat', '$descr', '$type', '$userName')";
+    //nefunguje vkladani vkladu a sporeni protoze ani jeden nemaji cash category
+   var_dump($query);
   $insert = $conn->query( $query );
 }
  if ( isset( $insert ) ) : ?>
