@@ -7,17 +7,23 @@ $username = "root";
 $password = "";
 $dbname = "finance";
 
+//times code
+$startMonth = date("Y-m.5");
+$getend = strtotime('Y-m-d');
+$endMonth = date("Y-m-5", strtotime("+1 month, $getend"));
+
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$SUMBsql = "SELECT SUM(cash_Value) AS ValSum FROM allcash WHERE usr_Id = '2' AND NOT type_Id ='4' ";
+$SUMBsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash WHERE usr_Id = '2' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
 $SUMBresult = $conn->query($SUMBsql);
 $Brow = mysqli_fetch_assoc($SUMBresult);
 $Bsum = $Brow['ValSum'];
-$SUMNsql = "SELECT SUM(cash_Value) AS ValSum FROM allcash WHERE usr_Id = '1' AND NOT type_Id ='4' ";
+$SUMNsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash WHERE usr_Id = '1' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
 $SUMNresult = $conn->query($SUMNsql);
 $Nrow = mysqli_fetch_assoc($SUMNresult);
 $Nsum = $Nrow['ValSum'];
@@ -33,10 +39,12 @@ $Savesql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash WHERE type_I
 $Saveresult = $conn->query($Savesql);
 $Saverow = mysqli_fetch_assoc($Saveresult);
 $Save = $Saverow['ValSum'];
+
+
+
 ?>
 <div class="sidenav">
 
-  <div class="container text-center">
     <div class="row">
       <div class="col">
         <a class="nav-l" href="?page=newrec" method="post" style="color: #e9ecef">
@@ -44,7 +52,7 @@ $Save = $Saverow['ValSum'];
         </a>
       </div>
       <div class="col">
-        <a href="?page=testing" method="post" style="color: #e9ecef">
+        <a href="?page=testing" method="post" style="color: #e9ecef" label="Vloz penize">
           <span class="fa-layers fa-fw fa-2x">
             <i class="fas fa-book "></i>
             <i class="fas fa-square" data-fa-transform="shrink-6 up-2  "></i>
@@ -55,7 +63,15 @@ $Save = $Saverow['ValSum'];
 
       </div>
     </div>
-    <hr class="rounded"> <!-- Divider 1st user fas fa-democrat -->
+  <hr class="rounded"> <!-- Divider for time -->
+  <div class="container text-center">
+    <div class="row">
+    <div class="col">
+        <i style="padding-left: 15px ;"><?php echo "Today is : <br> " . date("l d.m.Y"). "<br>" ?></i>
+      </div>
+    </div>
+
+    <hr class="rounded"> <!-- Divider 1st user - Nico -->
     <div class="row">
       <div class="col">
         <i class="fab fa-dev fa-4x"></i> <br>
@@ -70,7 +86,7 @@ $Save = $Saverow['ValSum'];
       </div>
     </div>
 
-    <hr class="rounded"> <!-- Divider 2nd user fa-republican -->
+    <hr class="rounded"> <!-- Divider 2nd user - Bert -->
 
     <div class="row">
       <div class="col">
@@ -107,6 +123,9 @@ $Save = $Saverow['ValSum'];
     </div>
 
     <hr class="rounded">
+
+
+
 
   </div>
 </div>

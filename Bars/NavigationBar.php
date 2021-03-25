@@ -1,7 +1,7 @@
 
 <div class="col" style="padding-left: 0px; padding-right: 0px;width: 87.5%;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff; color: #212429;">
-  <a class="navbar-brand" href="index.php">Index</a>
+  <a class="navbar-brand" href="?page=indexStats">Stats</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

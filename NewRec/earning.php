@@ -33,7 +33,7 @@ $today = $year . '-' . $month . '-' . $day;
  ?>
 
             <div>
-            <h4>Datum Nákupu</h4>
+            <h4>Datum </h4>
             <input type="date" value="<?php echo $today; ?>" id="date" name="date" >
             </div>
         <div>
