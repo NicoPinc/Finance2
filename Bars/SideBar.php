@@ -47,12 +47,12 @@ $Save = $Saverow['ValSum'];
 
     <div class="row">
       <div class="col">
-        <a class="nav-l" href="?page=newrec" method="post" style="color: #e9ecef">
+        <a class="nav-l" href="?page=newrec" method="post" style="color: #e9ecef" title="Nový záznam">
           <i class="fas fa-hand-holding-usd fa-2x" c></i>
         </a>
       </div>
       <div class="col">
-        <a href="?page=testing" method="post" style="color: #e9ecef" label="Vloz penize">
+        <a href="?page=testing" method="post" style="color: #e9ecef" title=" Všechny Záznamy">
           <span class="fa-layers fa-fw fa-2x">
             <i class="fas fa-book "></i>
             <i class="fas fa-square" data-fa-transform="shrink-6 up-2  "></i>
@@ -63,13 +63,7 @@ $Save = $Saverow['ValSum'];
 
       </div>
     </div>
-  <hr class="rounded"> <!-- Divider for time -->
   <div class="container text-center">
-    <div class="row">
-    <div class="col">
-        <i style="padding-left: 15px ;"><?php echo "Today is : <br> " . date("l d.m.Y"). "<br>" ?></i>
-      </div>
-    </div>
 
     <hr class="rounded"> <!-- Divider 1st user - Nico -->
     <div class="row">
@@ -123,6 +117,10 @@ $Save = $Saverow['ValSum'];
     </div>
 
     <hr class="rounded">
+    <!-- kalkula4ka-->
+    <?php 
+      include('./testCode/calculator.php');
+     ?>
 
 
 
