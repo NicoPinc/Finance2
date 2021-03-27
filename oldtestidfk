@@ -1,0 +1,82 @@
+  <div class="page">    
+        <div class="page-content" id="main">
+
+          <div id="NavBar">
+            <?php // include "Bars/NavigationBar.php"?>
+            nav
+          </div>
+
+          <div id="page">
+
+            <?php
+            $mypage = isset($_GET['page']) ? $_GET['page'] : 'home';
+            //$mypage = $_GET['page'];
+            switch($mypage){
+              case "testing":
+                @include("testCode/TTP.php");
+                break;
+            case "newEarn":
+                @include("pages/newEarn.php");
+                break;
+
+            case "newFund":
+              @include("pages/newFund.php");
+              break;
+
+            case "testing":
+              @include("TableCrossroads.php");
+              break;
+
+            case "newrec":
+              @include("NewRecord.php");
+              break;
+            case "edTable":
+              @include("testPages/editableTable.php");
+              break;
+
+            case "NicoAllStats":
+              @include("pages/NicoAllStats.php");
+              break;
+              case "BertAllStats":
+                @include("pages/BertAllStats.php");
+                break;
+
+            case "StatsAllEarn":
+              @include("pages/showEarnAll.php");
+              break;
+
+            case "StatsNicoEarn":
+              @include("pages/showEarnNico.php");
+              break;
+
+            case "StatsBertEarn":
+              @include("pages/showEarnBert.php");
+              break;
+
+            case "StatsAllExp":
+              @include("pages/showPurAll.php");
+              break;
+
+            case "StatsNicoExp":
+              @include("pages/showPurNico.php");
+              break;
+
+            case "StatsBertExp":
+              @include("pages/showPurBert.php");
+              break;
+
+              
+            default:
+                @include("default.php");
+            }
+            ?>
+          </div>
+      </div>  
+
+    </div>
+  </div>
+
+  <div class="sidebar" id="sidebar" > <!-- SideBar -->
+    <?php // include "Bars/SideBar.php" ?>
+    side
+  </div>

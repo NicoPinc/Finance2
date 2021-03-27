@@ -1,4 +1,7 @@
 <style>
+  html, body {
+    height:100%;
+}
   #MainPage{ 
   text-align: center;
   width: 100%;
@@ -56,8 +59,8 @@
               @include("pages/newFund.php");
               break;
 
-            case "testing":
-              @include("TableCrossroads.php");
+            case "indexStats":
+              @include("testPages/StatsPage.php");
               break;
 
             case "newrec":

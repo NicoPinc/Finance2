@@ -24,7 +24,6 @@
 
             <br>
 <?php
-
 $month = date('m');
 $day = date('d');
 $year = date('Y');
