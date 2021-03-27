@@ -20,7 +20,7 @@
   </div>
     <div class="col">
       <div class="card flex-fill">
-        row 1 col 2
+      row 1 col 2
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
   <div class="row">
   <div class="col" id="FioStats">
       <div class="card flex-fill">
-        row 3 col 1
+      <?php include("./Graphs/FioChart.php"); ?>
       </div>
     </div>
   </div>
