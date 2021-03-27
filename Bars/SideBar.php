@@ -8,9 +8,9 @@ $password = "";
 $dbname = "finance";
 
 //times code
-$startMonth = date("Y-m.5");
-$getend = strtotime('Y-m-d');
-$endMonth = date("Y-m-5", strtotime("+1 month, $getend"));
+$startMonth = date("Y-m.1");
+$getend = strtotime('Y-m-1');
+$endMonth = date("Y-m-1", strtotime("+1 month, $getend"));
 
 
 // Create connection

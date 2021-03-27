@@ -13,14 +13,14 @@
 </style>
 <div class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-7">
       <div class="card flex-fill">hello
         <?php include("./Graphs/pieChart.php"); ?>
       </div>
   </div>
-    <div class="col">
+    <div class="col-5">
       <div class="card flex-fill">
-      row 1 col 2
+      <?php include("./Graphs/vsLastMonth.php"); ?>
       </div>
     </div>
   </div>
