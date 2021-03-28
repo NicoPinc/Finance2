@@ -47,13 +47,13 @@ $today = $year . '-' . $month . '-' . $day;
             <br>
             <div>
             <h4>Kategorie</h4>
-            <select name="cat" id="cat" class="custom-select" multiple size="4">
+            <select name="cat" id="cat" class="custom-select" multiple size="4" style="width: auto;" >
             <?php
               $conn = new mysqli("127.0.0.1","root", "", "finance");
               $sql = "SELECT cat_Id,cat_Name FROM pur_cat";
               $Res = $conn->query($sql);
               while ($row = mysqli_fetch_assoc($Res)){
-                echo "<option value=". $row['cat_Id'] .">". $row['cat_Name'] ."</option>";
+                echo "<option value=". $row['cat_Id'] .">". $row['cat_Name'] ."</option >";
               }
             ?>
             

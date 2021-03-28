@@ -24,7 +24,7 @@ function autoSubmit()
    
   <?php
   $userRadio = $_POST['User'];
-  if(isset($userRadio)){
+ /* if(isset($userRadio)){
     if($userRadio == "All"){
       echo 'all';
     }elseif($userRadio == "Nico"){
@@ -33,8 +33,16 @@ function autoSubmit()
       echo "bert";
     }else{
       echo "error";
+    } 
+  }*/
+
+    switch($userRadio){
+      case 'All': echo "all";break;
+      case 'Nico': echo "nico";break;
+      case 'Bert': echo "bert";break;
+      default: echo "all";
     }
-  }
+  
 //times code
 $startMonth = date("Y-m-1"); //this Month
 $getend = strtotime('Y-m-1');
