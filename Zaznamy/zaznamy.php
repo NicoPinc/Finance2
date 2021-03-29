@@ -70,11 +70,12 @@ $typeSQl = "SELECT"
       </div>
     </div>
   </div>
-  <div class="row">
+  <div <?php if (!isset($_POST['button'])) echo 'hidden' ?>>
+  <div class="row" >
     <div class="card flex-fill w-100">
-      <div class="card-body d-flex">
+      <div class="card-body d-flex" >
 
-        <table class="table table-sm table-hover" style="padding: 10px;">
+        <table class="table table-sm table-hover" style="padding: 10px;" >
           <thead>
             <tr>
               <th scope="col">Datum</th>
@@ -88,7 +89,26 @@ $typeSQl = "SELECT"
           <tbody>
             <tr>
               <?php
-                $sql = "SELECT "
+                $sql = "SELECT * FROM allcash2 c
+                RIGHT JOIN purchase_type pt ON c.type_Id = pt.type_Id
+                RIGHT JOIN pur_cat cat ON c.cat_Id = cat.cat_Id
+                INNER JOIN users u ON c.usr_Id = u.usr_Id
+                ORDER BY cash_Date DESC";
+                $res = $conn->query($sql);
+                if($res->num_rows > 0){
+                  while ($row= $res->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td>" . $row['cash_Date'] . "</td>";
+                    echo "<td>" . $row['cash_Desc'] . "</td>";
+                    echo "<td>" . $row['cat_Name'] . "</td>";
+                    echo "<td>" . $row['usr_Name'] . "</td>";
+                    echo "<td>" . $row['type_Name'] . "</td>";
+                    echo "<td style='text-align: end;'>" . $row['cash_Value'] . "</td>";
+                    echo "</tr>";  
+                  }
+                  }else{
+                    echo "No data fetched";
+                }
               ?>
             </tr>
           </tbody>
@@ -97,4 +117,13 @@ $typeSQl = "SELECT"
       </div>
     </div>
   </div>
+</div>
+  <div <?php if (isset($_POST['button'])) echo 'hidden' ?>>
+  <div class="row">
+    <div class="card flex-fill w-100">
+      Hello
+    </div>
+  </div>
+</div>
+
 </div>
