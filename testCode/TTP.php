@@ -1,4 +1,4 @@
-
+//this is curent working records table - uses Tables folder
 <div class="container-fluid">
   <div class="row">
 

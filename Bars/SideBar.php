@@ -2,10 +2,7 @@
   <link rel="stylesheet" href="./css/bars.css">
 </head>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "finance";
+include('DBconn.php');
 
 //times code
 $startMonth = date("Y-m.1");
@@ -13,29 +10,23 @@ $getend = strtotime('Y-m-1');
 $endMonth = date("Y-m-1", strtotime("+1 month, $getend"));
 
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$SUMBsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash WHERE usr_Id = '2' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
+$SUMBsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash2 WHERE usr_Id = '2' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
 $SUMBresult = $conn->query($SUMBsql);
 $Brow = mysqli_fetch_assoc($SUMBresult);
 $Bsum = $Brow['ValSum'];
-$SUMNsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash WHERE usr_Id = '1' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
+$SUMNsql = "SELECT COALESCE(SUM(cash_Value),0) AS ValSum FROM allcash2 WHERE usr_Id = '1' AND NOT type_Id ='4' AND cash_Date BETWEEN '" . $startMonth ."' AND '" . $endMonth. "' ";
 $SUMNresult = $conn->query($SUMNsql);
 $Nrow = mysqli_fetch_assoc($SUMNresult);
 $Nsum = $Nrow['ValSum'];
-$SaveNsql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash WHERE usr_Id = '1' AND type_Id ='4' ";
+$SaveNsql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash2 WHERE usr_Id = '1' AND type_Id ='4' ";
 $SaveNresult = $conn->query($SaveNsql);
 $NSaverow = mysqli_fetch_assoc($SaveNresult);
 $NSave = $NSaverow['ValSum'];
-$SaveBsql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash WHERE usr_Id = '2' AND type_Id ='4' ";
+$SaveBsql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash2 WHERE usr_Id = '2' AND type_Id ='4' ";
 $SaveBresult = $conn->query($SaveBsql);
 $BSaverow = mysqli_fetch_assoc($SaveBresult);
 $BSave = $BSaverow['ValSum'];
-$Savesql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash WHERE type_Id ='4' ";
+$Savesql = "SELECT ROUND(SUM(cash_Value), 0) AS ValSum FROM allcash2 WHERE type_Id ='4' ";
 $Saveresult = $conn->query($Savesql);
 $Saverow = mysqli_fetch_assoc($Saveresult);
 $Save = $Saverow['ValSum'];
@@ -52,7 +43,7 @@ $Save = $Saverow['ValSum'];
         </a>
       </div>
       <div class="col">
-        <a href="?page=testing" method="post" style="color: #e9ecef" title=" Všechny Záznamy">
+        <a href="?page=záznamy" method="post" style="color: #e9ecef" title=" Všechny Záznamy">
           <span class="fa-layers fa-fw fa-2x">
             <i class="fas fa-book "></i>
             <i class="fas fa-square" data-fa-transform="shrink-6 up-2  "></i>

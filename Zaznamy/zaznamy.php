@@ -1,5 +1,6 @@
+== zaznamy filtruji zatim jenom all users a all money ==
 <?php
-include("./Database/config.php");
+include("./DBconn.php");
 
 $usersSQL = "SELECT * FROM users ORDER BY usr_Id ASC";
 $resultsU = $conn->query($usersSQL);

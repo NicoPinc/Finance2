@@ -32,7 +32,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="src/jquery-tabledit-1.2.3/jquery.tabledit.min.js"></script>
-    <title>Index</title>
+    <?php include('./DBconn.php'); ?>
+    <title>Finance</title>
 </head>
 <body>
 
@@ -48,62 +49,22 @@
             $mypage = isset($_GET['page']) ? $_GET['page'] : 'home';
             //$mypage = $_GET['page'];
             switch($mypage){
-              case "testing":
+              case "oldRec":
                 @include("testCode/TTP.php");
                 break;
-            case "newEarn":
-                @include("pages/newEarn.php");
+            case "záznamy":
+                @include("Zaznamy/zaznamy.php");
                 break;
 
-            case "newFund":
-              @include("pages/newFund.php");
-              break;
-
             case "indexStats":
-              @include("Zaznamy/zaznamy.php");
+              @include("testPages/StatsPage.php");
               break;
 
             case "newrec":
               @include("NewRecord.php");
               break;
-            case "testing":
-              @include("testPages/editableTable.php");
-              break;
-
-            case "NicoAllStats":
-              @include("pages/NicoAllStats.php");
-              break;
-              case "BertAllStats":
-                @include("pages/BertAllStats.php");
-                break;
-
-            case "StatsAllEarn":
-              @include("pages/showEarnAll.php");
-              break;
-
-            case "StatsNicoEarn":
-              @include("pages/showEarnNico.php");
-              break;
-
-            case "StatsBertEarn":
-              @include("pages/showEarnBert.php");
-              break;
-
-            case "StatsAllExp":
-              @include("pages/showPurAll.php");
-              break;
-
-            case "StatsNicoExp":
-              @include("pages/showPurNico.php");
-              break;
-
-            case "StatsBertExp":
-              @include("pages/showPurBert.php");
-              break;
-
-              
             default:
-                @include("default.php");
+                @include("home.php");
             }
             ?>
           </div>
