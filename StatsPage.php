@@ -32,7 +32,7 @@
   </div>
   <div class="col">
       <div class="card flex-fill">
-        row 2 col 2
+      <?php include("./Graphs/MUcat.php"); ?>
       </div>
   </div>
   </div>
