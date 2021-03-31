@@ -96,7 +96,7 @@ $Save = $Saverow['ValSum'];
           <i class="fas fa-square" data-fa-transform="shrink-4 down-2  "></i>
           <i class="fas fa-dollar-sign " data-fa-transform="shrink-6 down-1" style=" color: #373d44"></i>
         </span> <br>
-
+<br>
         <i> <?php require "difference.php"?></i>
       </div>
     </div>
@@ -106,32 +106,5 @@ $Save = $Saverow['ValSum'];
         <i style="padding-left: 15px ;"> <?php echo $Saverow['ValSum'] ?> Kč</i>
       </div>
     </div>
-
-    <hr class="rounded">
-    <!-- kalkula4ka-->
-    <?php 
-      include('./testCode/calculator.php');
-     ?>
-
-
-
-
   </div>
 </div>
-
-<style>
-  /** SMAZAT POKUD NEBUDE KALKULACKA */
-/* placeholder alling center*/
-::-webkit-input-placeholder {
-  text-align: center;
-}
-:-moz-placeholder { /* Firefox 18- */
-  text-align: center;  
-}
-::-moz-placeholder {  /* Firefox 19+ */
-  text-align: center;  
-}
-:-ms-input-placeholder {  
-  text-align: center; 
-}
-</style>

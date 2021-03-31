@@ -21,13 +21,13 @@ $Bertsum = $Bertrow['ValSum'];
 $Sum = $Bertrow['ValSum'] - $Nicorow['ValSum']; 
 //echo "<td> <h5>".$Sum."</h5></td>";
 if($Sum == 0 ){
-  echo "It's even (o˘◡˘o) ";
+  echo "Jsme si kvit (o˘◡˘o) ";
 }elseif($Sum < 0){
     $posSum = $Sum * -1;
-    echo "Nico pays ".$posSum."CZK more";
+    echo "Nico platí o ".$posSum."Kč víc";
 }else{
     $posSum = $Sum * 1;
-    echo "Bert pays ".$posSum."CZK more";
+    echo "Bert platí o ".$posSum."Kč víc";
 }
 $conn->close(); 
 ?>
