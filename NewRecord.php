@@ -17,6 +17,8 @@ if(is_null($cat)){
   //var_dump($query);
   $insert = $conn->query( $query );
 }
+
+
 ?>
 <script>
 function autoSubmit(){
@@ -32,10 +34,10 @@ function autoSubmit(){
         <form action="" method="POST" name="RecType" id="center">
           <label class="checktext" for="type_Expense">
           <input onclick="autoSubmit();" type="radio" class="radio" id="type_Expense" name="newRECtype" value="Expense"<?php if(isset($_POST['newRECtype']) && $_POST['newRECtype'] == 'Expense') echo ' checked="checked"'?> checked/>
-          <span>Výdej     </span></label>
+          <span>Výdaj  |</span></label>
           <label class="checktext" for="type_Earning">
           <input onchange="autoSubmit();" type="radio" class="radio" id="type_Earning" name="newRECtype" value="Earnings" <?php if(isset($_POST['newRECtype']) && $_POST['newRECtype'] == 'Earnings')  echo ' checked="checked"' ?> />
-          <span>Vklad     </span></label>
+          <span>Vklad  |</span></label>
           <label class="checktext" for="type_Saving">
           <input onchange="autoSubmit();" type="radio" class="radio" id="type_Saving" name="newRECtype" value="Saving" <?php if(isset($_POST['newRECtype']) && $_POST['newRECtype'] == 'Saving')  echo ' checked="checked"' ?> />
           <span>Spoření</span></label>

@@ -61,10 +61,10 @@ $typeSQl = "SELECT"
         </div>
         <div <?php if (isset($_POST['button'])) echo 'hidden' ?>>
         <div class="row">
-          <div class="col">Zazamy nevybrane</div>
+          <div class="col">Není vybrán žádný filter</div>
         </div>
         <div class="row">
-          <div class="col"><h5> ← </h5></div>
+          <div class="col"><h5> ←</h5></div>
         </div>        
         </div>
         

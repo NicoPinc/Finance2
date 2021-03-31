@@ -67,7 +67,7 @@ if(isset($_POST['but_logout'])){
                 @include("testCode/TTP.php");
                 break;
             case "záznamy":
-                @include("Zaznamy/zaznamy.php");
+                @include("Zaznamy/zalozni.php");
                 break;
 
             case "indexStats":
